@@ -1,0 +1,1 @@
+cmd_/home/rishi/DDAssignment1/main.ko := ld -r  -EL  --build-id=sha1  -T scripts/module.lds -o /home/rishi/DDAssignment1/main.ko /home/rishi/DDAssignment1/main.o /home/rishi/DDAssignment1/main.mod.o;  true
