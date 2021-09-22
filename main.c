@@ -38,12 +38,11 @@ static int closefile(struct inode *i, struct file *f)        // to close the dri
 static ssize_t readfile(struct file *f, char __user *buf, size_t len, loff_t *off)     // to read from the driver file
 {
 	
-    uint16_t val,i=0;
+	uint16_t val,i=0;
     char *addr;
     get_random_bytes(&val, sizeof(val));                       // for generating random numbers
-    val=val%1023;
     addr = (char *)&val;
-    while(i<2)
+    while(i<4)
        {
          printk(KERN_INFO "Copied Char:%d\n",*addr);
          put_user(*(addr++),buf++);
@@ -63,7 +62,7 @@ static ssize_t writefile(struct file *f, const char __user *buf, size_t len, lof
 
 
 
-long ioctl_dev(struct file *file, unsigned int ioctl_num, unsigned long ioctl_param)
+long ioctl_dev(struct file *file, unsigned int ioctl_num, unsigned long ioctl_param)     //total 10 IOCTL have to be implemented
 {
  int i;
 
@@ -200,5 +199,6 @@ module_exit(mychar_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("RISHI");
 MODULE_DESCRIPTION("DDAssignment1");
+
 
 

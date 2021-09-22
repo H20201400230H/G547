@@ -41,10 +41,9 @@ __used __section("__versions") = {
 	{ 0x79aa04a2, "get_random_bytes" },
 	{ 0x8f678b07, "__stack_chk_guard" },
 	{ 0xb1ad28e0, "__gnu_mcount_nc" },
-	{ 0xf7802486, "__aeabi_uidivmod" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "7117951A1624137181E57A0");
+MODULE_INFO(srcversion, "9D5D461461E8830C205454A");

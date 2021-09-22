@@ -6,7 +6,7 @@
 
 #include "config.h"
 
-int ioctl_gyro1(int file_desc, char *msg)
+int ioctl_gyro1(int file_desc, char *msg)     				//GRYOSCOPE 1 FUNCTION 
 {
  int ret_val;
 
@@ -14,7 +14,7 @@ int ioctl_gyro1(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_gyro2(int file_desc, char *msg)
+int ioctl_gyro2(int file_desc, char *msg)					//GRYOSCOPE 2 FUNCTION 
 {
  int ret_val;
 
@@ -22,7 +22,7 @@ int ioctl_gyro2(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_gyro3(int file_desc, char *msg)
+int ioctl_gyro3(int file_desc, char *msg)					//GRYOSCOPE 3 FUNCTION 
 {
  int ret_val;
 
@@ -30,7 +30,7 @@ int ioctl_gyro3(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_acc1(int file_desc, char *msg)
+int ioctl_acc1(int file_desc, char *msg)					//ACCELERATOR1 FUNCTION
 {
  int ret_val;
 
@@ -38,7 +38,7 @@ int ioctl_acc1(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_acc2(int file_desc, char *msg)
+int ioctl_acc2(int file_desc, char *msg)					//ACCELERATOR2 FUNCTION
 {
  int ret_val;
 
@@ -46,7 +46,7 @@ int ioctl_acc2(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_acc3(int file_desc, char *msg)
+int ioctl_acc3(int file_desc, char *msg)					//ACCELERATOR3 FUNCTION
 {
  int ret_val;
 
@@ -54,7 +54,7 @@ int ioctl_acc3(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_press(int file_desc, char *msg)
+int ioctl_press(int file_desc, char *msg)                    //PRESSURE SENSOR FUNCTION
 {
  int ret_val;
 
@@ -62,7 +62,7 @@ int ioctl_press(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_comp1(int file_desc, char *msg)
+int ioctl_comp1(int file_desc, char *msg)					//COMPASS1 FUNCTION
 {
  int ret_val;
 
@@ -70,7 +70,7 @@ int ioctl_comp1(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_comp2(int file_desc, char *msg)
+int ioctl_comp2(int file_desc, char *msg) 					//COMPASS2 FUNCTION
 {
  int ret_val;
 
@@ -78,7 +78,7 @@ int ioctl_comp2(int file_desc, char *msg)
  return 0;
 }
 
-int ioctl_comp3(int file_desc, char *msg)
+int ioctl_comp3(int file_desc, char *msg)                    ////COMPASS3 FUNCTION
 {
  int ret_val;
 
@@ -100,8 +100,11 @@ int main()
   exit(-1);
  }
 
+
+// READING IS DONE IN HEXADECIMAL
+
  ioctl_gyro1(file_desc,message_rec);
- printf("Gyroscope 1: %X",message_rec[0]);
+ printf("Gyroscope 1: %X",message_rec[0]);                       
  printf("%X\n",message_rec[1]);
 
  ioctl_gyro2(file_desc,message_rec);
@@ -143,6 +146,5 @@ int main()
  close(file_desc);
  return 0;
 }
-
 
 
